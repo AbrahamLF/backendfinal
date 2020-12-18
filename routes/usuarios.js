@@ -6,7 +6,7 @@ const { validarCampos } = require('../bml/middlewares/validar-campos');
 const router = Router();
 
 router.get('/', getUsuarios);
-router.get('/id/:id', getUsuarioid);
+router.get('/:id', getUsuarioid);
 router.post('/', [
         check('nombre', 'El nombre es requerido').not().isEmpty(),
         check('email', 'El email es requerido').not().isEmpty(),
