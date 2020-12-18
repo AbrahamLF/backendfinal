@@ -73,7 +73,7 @@ const googleSignIn = async(req, res = response) => {
                     'value': picture
                 },
                 {
-                    'name': 'local',
+                    'name': 'nativo',
                     'value': 0
                 },
                 {

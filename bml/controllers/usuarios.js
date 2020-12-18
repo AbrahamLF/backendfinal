@@ -63,7 +63,7 @@ const addUsuario = async(req, res) => {
             'value': ''
         },
         {
-            'name': 'local',
+            'name': 'nativo',
             'value': 1
         },
         {
