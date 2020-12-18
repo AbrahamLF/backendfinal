@@ -13,6 +13,8 @@ const login = async(req, res) => {
     }];
 
     usuario = await querySingle('stp_usuarios_login', sqlParams);
+    console.log(usuario);
+
     if (!usuario) {
         res.json({
             status: false,
@@ -22,7 +24,7 @@ const login = async(req, res) => {
     }
 
     const validPassword = bcrypt.compareSync(password, usuario.password);
-
+    console.log(validPassword);
     if (!validPassword) {
         res.json({
             status: false,
@@ -32,7 +34,7 @@ const login = async(req, res) => {
     }
 
     const token = await generateJWT(usuario.id);
-
+    console.log(token);
     res.json({
         status: true,
         message: 'Acceso correcto',
@@ -116,6 +118,7 @@ const googleSignIn = async(req, res = response) => {
             data: token
         });
     } catch (err) {
+        console.log(err);
         res.json({
             status: false,
             message: 'Acceso por google incorrecto',
